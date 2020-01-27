@@ -1,0 +1,16 @@
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="{% url "inventory_list" %}">Navbar</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url "inventory_new" %}">상품 등록</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url "client_new" %}">거래처 등록</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url "client_list" %}">거래처 관리</a>
+    </li>
+
+
+  </ul>
+</nav>

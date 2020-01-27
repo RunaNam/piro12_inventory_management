@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content%}
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{ client.name }}</h4>
+        <p class="card-text">{{ client.tel }}</p>
+        <p class="card-text">{{ client.address }}</p>
+      <hr>
+          <p> 거래 상품 목록 </p>
+      </div>
+
+        <a class="btn btn-outline-primary" href="{% url "client_edit" client.pk %}" role="button" style="width: 100px ">수정</a>
+        <a class="btn btn-outline-primary" href="{% url "client_delete" client.pk %}" role="button" style="width: 100px ">삭제</a>
+        <a class="btn btn-outline-primary" href="{% url "client_list" %}" role="button" style="width: 100px ">목록</a>
+
+    </div>
+{% endblock %}

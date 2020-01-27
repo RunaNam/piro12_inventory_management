@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="card">
+         {% if item.photo %}
+        <img src="{{ item.photo.url }}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <p class="card-text">가격: {{ item.price }}</p>
+            <p class="card-text">남은 수량: {{ item.amount }}</p>
+            <p class="card-text">제품 설명: {{ item.desc }}</p>
+        </div>
+
+        <a class="btn btn-outline-primary" href="{% url "inventory_edit" item.pk%}" role="button" style="width: 100px ">수정</a>
+        <a class="btn btn-outline-primary" href="{% url "inventory_delete" item.pk %}" role="button" style="width: 100px ">삭제</a>
+        <a class="btn btn-outline-primary" href="{% url "inventory_list" %}" role="button" style="width: 100px ">목록</a>
+
+    </div>
+
+{% endblock %}

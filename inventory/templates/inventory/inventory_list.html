@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row row-cols-1 row-cols-md-3">
+        {% for item in items %}
+            <div class="col mb-4">
+                <div class="card h-100">
+                    {% if item.photo %}
+                        <img src="{{ item.photo.url }}" class="card-img-top" alt="...">
+                    {% endif %}
+                    <a href="{% url 'inventory_detail' item.pk %}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text"> 가격: {{ item.price }}</p>
+                            <p class="card-text"> 남은 수량: {{ item.amount }}</p>
+                        </div>
+                    </a>
+                    <div style="margin: 0 auto">
+                        <a class="btn btn-outline-primary btn-sm" style="width:70px" href="{% url "num_plus" item.pk %}"
+                           role="button">+</a>
+                        <a class="btn btn-outline-primary btn-sm" style="width:70px" href="{% url "num_minus" item.pk %}"
+                           role="button">-</a>
+
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
